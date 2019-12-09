@@ -1,0 +1,2 @@
+.header .btn-slide-bar{width: 44px;height: 44px;float: left;cursor: pointer;line-height: 2.8;}
+.header .btn-slide-bar::before{content: "";width: 20px;height: 2px;background-color: antiquewhite;display: inline-block;box-shadow: 0 7px 0 antiquewhite, 0 -7px 0 antiquewhite;}
