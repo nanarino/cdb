@@ -121,6 +121,8 @@ python3 manage.py makemigrations
 python3 manage.py migrate   
 ```
 
+如果这里出错，请删除`nanarino/migrations`目录里除了`__init__.py`以外的文件后重试。
+
 
 
 ### 生成超级管理员
