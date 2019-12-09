@@ -1,0 +1,34 @@
+<%#登录页内容%>
+		<link rel="stylesheet" href="/login/css/mui-input.css" type="text/css">
+		<link rel="stylesheet" href="/login/css/login-bgi.css" type="text/css">
+		<script type="text/javascript" src="/login/js/login-mui-input.js"></script>
+		
+		<%- include('header'); %>
+		<div class="focusbox">
+			<div class="container">
+				<h1 class="focusbox-title"></h1>
+				<div class="focusbox-text">会员登录</div>
+			</div>
+		</div>
+		<section class="container">
+
+			<div class="mui-content">
+				<form id='login-form' class="mui-input-group" action='/user/login' method="post">
+					<div class="mui-input-row">
+						<label>昵称</label>
+						<input id='username' name='username' type="text" class="clearfix mui-input" placeholder="请输入昵称" tabindex="1">
+					</div>
+					<div class="mui-input-row">
+						<label>密码</label>
+						<input id='password' name='password' type="password" class="clearfix mui-input" placeholder="请输入密码" tabindex="2" onkeydown="if(event.ctrlKey&&event.keyCode==13){checkUser();return false};">
+					</div>
+				</form>
+				<div class="mui-content-padded">
+					<button id='login-btn' type="button" class="mui-btn mui-btn-block mui-btn-primary" tabindex="3">登录</button>
+					<div class="link-area"><a href="/user/register">注册</a> <span class="spliter">|</span> <a id='forgetPassword'>找回</a>
+					</div>
+				</div>
+			</div>
+			
+		</section>
+		<%- include('footer'); %>

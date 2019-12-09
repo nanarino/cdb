@@ -1,0 +1,50 @@
+<%#头部模板%>
+
+		<header class="header">
+			<div class="container">
+				<div class="logo">
+					<a href="#" title=""><img src="/public/img/header.png"><span>茶道部</span></a>
+				</div>
+				<div class="sitenav">
+					<ul>
+						<li class="menu-item">
+							<a href="/music">音乐区</a>
+						</li>
+						<li class="menu-item">
+							<a href="/picture">美图区</a>
+						</li>
+						<li class="menu-item">
+							<a href="/library">图书馆</a>
+						</li>
+						<li class="menu-item">
+							<a href="/relaxation">后花园</a>
+						</li>
+						<li class="menu-item">
+							<a href="/staff">工作组</a>
+						</li>
+						<li class="menu-item menu-item-object-custom">
+							<% if(session && !session.isNew){ %>
+							<a href="/user/logout">退出</a>
+							<% }else{ %>
+							<a href="/user/login">登录</a>
+							<% } %>
+						</li>
+					</ul>
+				</div>
+				<span class="sitenav-on"><i class="fa">&#xe605;</i></span>
+				<span class="sitenav-mask"></span>
+				<div class="usersign">
+					<% if(session && !session.isNew){ %>
+
+					<% }else{ %>
+					<a class="usersign-login" target="_blank" href="/user/login">登录</a>
+					<a class="usersign-register" target="_blank" href="/user/register">注册</a>
+					<% } %>
+				</div>
+				<div class="accounts"></div> <span class="searchstart-on"><i class="fa">&#xe600;</i></span>
+				<span class="searchstart-off"><i class="fa">&#xe606;</i></span>
+				<form method="get" class="searchform" action="http://www.akokono.com/">
+					<button class="sbtn" type="submit"><i class="fa">&#xe600;</i></button><input class="sinput" name="s" type="text" placeholder="输入关键字" value="">
+				</form>
+			</div>
+		</header>

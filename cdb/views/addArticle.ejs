@@ -1,0 +1,33 @@
+<%#文章发表页内容%>
+		<link rel="stylesheet" href="/relaxation/css/addArticleinput.css" type="text/css">
+		<script type="text/javascript" src="/relaxation/js/addArticle.js"></script>
+		
+		<%- include('header'); %>
+		<div class="focusbox">
+			<div class="container">
+				<h1 class="focusbox-title"></h1>
+				<div class="focusbox-text">发表文章</div>
+			</div>
+		</div>
+		<section class="container">
+			
+			<form action="/relaxation/addArticle" method="post" id="articleform">
+				<div class="artc">
+					<div class="artc-box">
+						<textarea placeholder="标题" class="artc-area" name="title" id="artc-title" cols="100%" rows="1" tabindex="1" required></textarea>
+					</div>
+					<div class="artc-box">
+						<textarea placeholder="正文" class="artc-area" name="content" id="artc-comment" cols="100%" rows="9" tabindex="2" required></textarea>
+					</div>
+					<div class="artc-ctrl">
+						<button class="artc-submit" type="button" id="artc-submit" tabindex="3">
+							立即发布
+						</button>
+					</div>
+				</div>
+			</form>
+
+			
+
+		</section>
+		<%- include('footer'); %>
