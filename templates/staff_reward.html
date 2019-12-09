@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{#赞助页内容#}
+
+		{% block page-main %}
+    
+        {% include 'header.html' %}
+		<link rel="stylesheet" href="/static/staff/css/staff-bgi.css" type="text/css">
+		<script type="text/javascript" src="/static/staff/js/bodyClass.js"></script>
+		<section class="container">
+			
+			<header class="article-header">
+				<h1 class="article-title">管理员们需要帮助:</h1>
+			</header>
+
+			<article class="article-content">
+				<p style="text-align: center;">给古川打钱↓</p>
+				<p><img class="aligncenter size-full" src="/static/staff/img/Reward1.png" width="360"/></p>
+			</article>
+
+		</section>
+        {% include 'footer.html' %}
+    
+        {% endblock %}

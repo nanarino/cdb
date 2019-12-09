@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+{#图书馆页内容#}
+
+		{% block page-main %}
+    
+        {% include 'header.html' %}
+		<div class="focusbox">
+			<div class="container">
+				<h1 class="focusbox-title">图书馆</h1>
+				<div class="focusbox-text">也可以当成留言板来使用</div>
+			</div>
+		</div>
+		<section class="container">
+            <div class="tagslist">
+                <ul>{% for i in article_list %}<li><a class="name" href="/library/read/?articleId={{i.id}}">{{i.motif|default:"未分类"|truncatechars:6|lower}}</a><small>{{i.content|length }}字</small><p><a class="tit" href="/library/read/?articleId={{i.id}}">{{i.title|truncatechars:18}}</a></p></li>{% endfor %}</ul>
+            </div>
+			<div class="pagination pagination-multi">
+				<ul>
+					<li class="prev-page"></li>
+					<li class="active"><span>1</span></li>
+					<li>
+						<a href="#">2</a>
+					</li>
+					<li>
+						<a href="#">3</a>
+					</li>
+					<li>
+						<a href="#">4</a>
+					</li>
+					<li class="next-page">
+						<a href="#">下一页</a>
+					</li>
+					<li>
+						<a href="#">尾页</a>
+					</li>
+					<li><span>共 5 页</span></li>
+				</ul>
+			</div>
+		</section>
+        {% include 'footer.html' %}
+    
+        {% endblock %}

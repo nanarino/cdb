@@ -1,0 +1,52 @@
+section.container{
+	text-align: right;
+}
+
+body{
+	background: url(/static/user/img/register-bgi.jpg) no-repeat fixed center;
+	background-size: cover;
+}
+
+.focusbox,footer{
+	opacity:0.8;
+}
+
+@media (max-width: 1024px) {
+	.mui-content {
+		width:50%;
+		opacity:0.9;
+	}
+	.focusbox,footer{
+		opacity:0.9;
+	}
+}
+
+@media (max-width: 768px) {
+	body{
+		background: #fff;
+	}
+	.mui-content {
+		display:block;
+		margin: 41px auto;
+		width:70%;
+		border:1px solid gainsboro;
+		opacity:1;
+	}
+	.focusbox,footer{
+		opacity:1;
+	}
+}
+@media (max-width: 544px) {
+	body{
+		background: #fff;
+	}
+	.mui-content {
+		margin: 41px 0;
+		width:100%;
+		border:0;
+		opacity:1;
+	}
+	.focusbox,footer{
+		opacity:1;
+	}
+}

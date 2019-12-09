@@ -1,0 +1,106 @@
+
+.mui-content {
+	display: inline-block;
+	vertical-align: middle;
+	text-align: left;
+	margin: 41px 0;
+	padding-top: 20px;
+	width:30%;
+	background-color:#fff;
+	border:3px solid gainsboro;
+	border-radius:6px;
+	opacity:0.8;
+}
+
+.mui-input-group {
+	position: relative;
+	padding: 0;
+	border: 0;
+	background-color:#fff;
+	margin-top: 10px;
+}
+
+.mui-input-group .mui-input-row {
+	height: 40px;
+}
+
+.mui-input-group .mui-input-row:after {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 15px;
+	height: 1px;
+	content: "";
+	-webkit-transform: scaleY(.5);
+	transform: scaleY(.5);
+	background-color: #c8c7cc;
+}
+
+.mui-input-row {
+	position: relative;
+	clear: left;
+	overflow: hidden;
+}
+
+.mui-input-group label {
+	width: 22%;
+}
+
+.mui-input-row label {
+	float: left;
+	padding: 11px 15px;
+}
+
+.mui-input-row label~input {
+	width: 78%;
+	float: right;
+	padding: 10px 15px;
+	padding-left: 0;
+	border: 0;
+	line-height: 21px;
+}
+
+.mui-input-row label~input:focus {
+	border:0;
+	background: #fff;
+	outline: none;
+}
+
+
+.mui-content-padded {
+	margin: 10px;
+	margin-top: 25px;
+}
+
+.mui-btn {
+	padding: 10px;
+	border-radius: 3px;
+}
+
+.mui-btn-block {
+	font-size: 18px;
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+.mui-btn-primary {
+	color: #fff;
+	border: 1px solid #007aff;
+	background-color: #007aff;
+	transition:.3s;
+}
+.mui-btn-primary:hover{
+	border: 1px solid #006acc;
+	background-color: #0062cc;
+	transition:.3s;
+}
+.link-area {
+	display: block;
+	margin-top: 25px;
+	text-align: center;
+}
+
+.spliter {
+	color: #bbb;
+	padding: 0px 8px;
+}

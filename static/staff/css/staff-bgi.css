@@ -1,0 +1,12 @@
+.page-template-blank section.container{
+	background:url(/static/staff/img/reward-bgi.jpg);
+	background-attachment:fixed;
+}
+.page-template-blank section.container p{
+	background-color:rgba(255,244,255,.9);
+	color:#000;
+}
+.page-template-blank section.container .article-header{
+	background-color:rgba(255,244,255,.9);
+	color:#000;
+}

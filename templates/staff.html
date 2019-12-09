@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+{#工作组页内容#}
+
+		{% block page-main %}
+    
+        {% include 'header.html' %}
+        <script type="text/javascript" src="/static/staff/js/section-container-excerpts.js"></script>
+		<div class="focusbox">
+			<div class="container">
+				<h1 class="focusbox-title">工作组</h1>
+				<div class="focusbox-text">更新公告和管理员讨饭的地方</div>
+			</div>
+		</div>
+
+		<section class="container">
+			<div class="excerpts-wrapper">
+				<div class="excerpts">
+
+				</div>
+			</div>
+		</section>
+        {% include 'footer.html' %}
+    
+        {% endblock %}
