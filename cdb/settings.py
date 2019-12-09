@@ -25,7 +25,7 @@ SECRET_KEY = 'fhm*jp2k*_=ps&z=v_1i6oi3j!2y#&p)yws$w_d3j2gj!^)kf#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["127.0.0.1","www.******.com",]
 
 
 # Application definition
@@ -48,6 +48,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    #"nanarino.cors.Cors"
 ]
 
 ROOT_URLCONF = 'cdb.urls'
@@ -88,7 +89,7 @@ DATABASES = {
         "PORT":3306,
         'NAME':"cdbproject",
         "USER":"root",
-        "PASSWORD":"**********"
+        "PASSWORD":"******"
     }
 }
 
@@ -114,9 +115,11 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+#LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-Hans'
 
-TIME_ZONE = 'UTC'
+#TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
@@ -134,6 +137,6 @@ STATICFILES_DIRS=[
     os.path.join(BASE_DIR,"static")
 ]
 
-LOGIN_URL = '/user/login/'
+#LOGIN_URL = '/user/login/'
 
 AUTH_USER_MODEL = "nanarino.UserInfo"

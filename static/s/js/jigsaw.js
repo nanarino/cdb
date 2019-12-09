@@ -51,7 +51,7 @@ $(document).ready(function() {
 		thisJigsaw.style.top = (thisJigsaw.pst - thisJigsaw.pst % 10) / 10 * jigsawW + 'px'
 		thisJigsaw.style.left = (thisJigsaw.pst % 10) * jigsawW + 'px';
 		thisJigsaw.innerHTML = imgpath + PrefixInteger(pstArr[i], 2) + ".jpg'/>"
-		thisJigsaw.onclick = function() {
+		thisJigsaw.onclick = function(e) {
 			if(detime == 1) {
 				Controller.style.display = "block"
 			}
@@ -77,6 +77,7 @@ $(document).ready(function() {
 					thisJigsaw.style.opacity = 1
 				}, 250)
 			}
+            e.stopPropagation();//阻止冒泡
 		}
 
 	}

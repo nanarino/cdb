@@ -21,14 +21,12 @@
 	font-size: 14px;
 	outline: 0;
 	color: #666;
+	height: 26px
+}
+[name=content]{
 	height: 202px
 }
-#artc-title{
-	height: 26px
-}
-#artc-motif{
-	height: 26px
-}
+
 .artc-ctrl {
 	background-color: #fbfbfb;
 	height: 36px;

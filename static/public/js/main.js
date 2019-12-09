@@ -1,5 +1,11 @@
 //请在layout中紧跟jq引入
 
+//获取GET请求参数
+function getGET(key){
+    var reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)","i")
+    return location.search.substr(1).match(reg)
+}//null or Array[2]
+
 //弹窗
 function rewardsLog(h3,h4){
     $(".rewards-popover h3").text(h3)
@@ -21,8 +27,7 @@ function countDown(secs, surl) {
 	} else {
 		location.href = surl;
 	}
-}
-//countDown(3, '/index');
+}//countDown(3, '/index');
 
 //请求登录状态
 $(document).ready(function(){
@@ -39,19 +44,6 @@ $(document).ready(function(){
             window.isLogin=data.msg
         }  
     }); 
-//根据登录状态改变导航栏
-    if(window.isLogin===true){
-        $(".menu-item-object-custom").html('<a href="javascript:logout();">退出</a>')
-        console.log("当前为登录状态")
-    }else if(window.isLogin===false){
-        $(".menu-item-object-custom").html('<a href="/user/login">登录</a>')
-        $(".usersign").html('<a class="usersign-login" target="_blank" href="/user/login">登录</a><a class="usersign-register" target="_blank" href="/user/register">注册</a>')
-        console.log("当前为游客状态")
-    }else{
-        rewardsON()
-        rewardsLog("登录状态检查失败","可能是服务器抽风了")
-        console.error("查询不到登录状态")
-    }
 })
 
 //请求注销登录
@@ -65,7 +57,7 @@ function logout(){
             rewardsON()
         },  
         success: function(data) {  
-            if (data.msg===true){
+            if (data.msg==true){
                 rewardsON()
                 rewardsLog("注销成功","")
                 $('.sitenav-mask').trigger("click")

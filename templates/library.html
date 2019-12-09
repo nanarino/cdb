@@ -3,16 +3,29 @@
 
 		{% block page-main %}
     
-        {% include 'header.html' %}
+        {% include 'header_index.html' %}
 		<div class="focusbox">
 			<div class="container">
 				<h1 class="focusbox-title">图书馆</h1>
-				<div class="focusbox-text">也可以当成留言板来使用</div>
+				<div class="focusbox-text">展示部员分享的随笔</div>
 			</div>
 		</div>
 		<section class="container">
             <div class="tagslist">
-                <ul>{% for i in article_list %}<li><a class="name" href="/library/read/?articleId={{i.id}}">{{i.motif|default:"未分类"|truncatechars:6|lower}}</a><small>{{i.content|length }}字</small><p><a class="tit" href="/library/read/?articleId={{i.id}}">{{i.title|truncatechars:18}}</a></p></li>{% endfor %}</ul>
+                <ul>
+                {% for i in article_list %}
+                    <li>
+                        <a class="name" href="/library/read/?articleId={{i.id}}">
+                            {{i.motif|default:"未分类"|truncatechars:6|lower}}
+                        </a><small>{{i.content|length }}字</small>
+                        <p>
+                            <a class="tit" href="/library/read/?articleId={{i.id}}">
+                                {{i.title|truncatechars:18}}
+                            </a>
+                        </p>
+                    </li>
+                {% endfor %}
+                </ul>
             </div>
 			<div class="pagination pagination-multi">
 				<ul>

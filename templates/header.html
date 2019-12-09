@@ -1,11 +1,12 @@
-{#头部模板#}
+{#带返回键的头部模板#}
 
         <script type="text/javascript" src="/static/public/js/menu.js"></script>
-
+        <script type="text/javascript" src="/static/public/js/menu_header.js"></script>
+        
 		<header class="header">
 			<div class="container">
 				<div class="logo">
-					<a href="#" title=""><img src="/static/public/img/header.png"><span>茶道部</span></a>
+					<a href="/index/" title=""><img src="/static/public/img/header.png"><span>茶道部</span></a>
 				</div>
 				<div class="sitenav">
 					<ul>
@@ -29,19 +30,12 @@
 						</li>
 					</ul>
 				</div>
-				<span class="sitenav-on"><i class="fa">&#xe605;</i></span>
+				<span class="sitenav-on"><i class="fa">&#xe610;</i></span>
 				<span class="sitenav-mask"></span>
                 
 				<div class="usersign">
 
 				</div>
-                
-				<div class="accounts"></div> <span class="searchstart-on"><i class="fa">&#xe600;</i></span>
-				<span class="searchstart-off"><i class="fa">&#xe606;</i></span>
-                
-				<form method="get" class="searchform" action="/s/">
-                {% csrf_token %}
-					<button class="sbtn" type="submit"><i class="fa">&#xe600;</i></button><input class="sinput" name="wd" type="text" placeholder="输入关键字" value="">
-				</form>
+
 			</div>
 		</header>

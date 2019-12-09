@@ -3,20 +3,29 @@
 
 		{% block page-main %}
     
-        {% include 'header.html' %}
+        {% include 'header_index.html' %}
 		<div class="focusbox">
 			<div class="container">
 				<h1 class="focusbox-title">音乐区</h1>
-				<div class="focusbox-text">(数据库未连接)</div>
+				<div class="focusbox-text">上传歌曲功能暂未实装</div>
 			</div>
 		</div>
 		<section class="container">
-			<div class="excerpts-wrapper">
-				<div class="excerpts">
+        
+            <div class="tagslist">
+                <ul>
+                    <li>
+                        <a class="name" href="/music/listen/?audioId=0">翻唱</a><small>4首</small>
+                        <p><a class="tit" href="">akokono的翻唱</a></p>
+                    </li>
+                    <li>
+                        <a class="name" href="/music/listen/?audioId=1">初音</a><small>2首</small>
+                        <p><a class="tit" href="">初音のうた</a></p>
+                    </li>
+                </ul>
+            </div>
 
-				</div>
-			</div>
-			<div class="pagination pagination-multi">
+            <div class="pagination pagination-multi">
 				<ul>
 					<li class="prev-page"></li>
 					<li class="active"><span>1</span></li>

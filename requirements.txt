@@ -1,11 +1,11 @@
 altgraph==0.16.1
-Django==1.11
+Django==1.11.20
 future==0.17.1
 macholib==1.11
+Markdown==3.0.1
 mysql-connector-python==8.0.15
 pefile==2018.8.8
 protobuf==3.7.0
-PyInstaller==3.4
 PyMySQL==0.9.3
 pytz==2018.9
 pywin32-ctypes==0.2.0

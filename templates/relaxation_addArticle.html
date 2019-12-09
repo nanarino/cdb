@@ -5,32 +5,30 @@
     
         {% include 'header.html' %}
 
-		<link rel="stylesheet" href="/static/relaxation/css/addArticleinput.css" type="text/css">
+		<link rel="stylesheet" href="/static/relaxation/css/add-input.css" type="text/css">
 		<script type="text/javascript" src="/static/relaxation/js/addArticle.js"></script>
         
 		<div class="focusbox">
 			<div class="container">
 				<h1 class="focusbox-title"></h1>
-				<div class="focusbox-text">发表文章</div>
+				<div class="focusbox-text">发表随笔（支持markdown语法，请不要外链图片）</div>
 			</div>
 		</div>
 		<section class="container">
 			
 			<form id="articleform" onsubmit="return false">
-            {% csrf_token %}
-                <input id='username' name='userId' type="text" value={{userId}} style="display:none">
 				<div class="artc">
 					<div class="artc-box">
 						<textarea placeholder="标题" class="artc-area" name="title" id="artc-title" cols="100%" rows="1" tabindex="1" required></textarea>
 					</div>
                     <div class="artc-box">
-						<textarea placeholder="分类" class="artc-area" name="motif" id="artc-motif" cols="100%" rows="1" tabindex="1" required></textarea>
+						<textarea placeholder="分类" class="artc-area" name="motif" id="artc-motif" cols="100%" rows="1" tabindex="2" required></textarea>
 					</div>
 					<div class="artc-box">
-						<textarea placeholder="正文" class="artc-area" name="content" id="artc-comment" cols="100%" rows="9" tabindex="2" required></textarea>
+						<textarea placeholder="正文" class="artc-area" name="content" id="artc-content" cols="100%" rows="9" tabindex="3" required></textarea>
 					</div>
 					<div class="artc-ctrl">
-						<button class="artc-submit" type="button" id="artc-submit" tabindex="3">
+						<button class="artc-submit" type="button" id="artc-submit" tabindex="4">
 							立即发布
 						</button>
 					</div>

@@ -1,0 +1,70 @@
+{% extends 'layout.html' %}
+{#个人信息页内容#}
+
+		{% block page-main %}
+    
+        {% include 'header.html' %}
+        <script type="text/javascript" src="/static/picture/js/bodyClass.js"></script>
+		<link rel="stylesheet" href="/static/relaxation/css/add-input.css" type="text/css">
+        {% if is_self %}
+        <script type="text/javascript" src="/static/relaxation/js/ownSpace.js"></script>
+        {% endif %}
+		<div class="focusbox">
+			<div class="container">
+				<h1 class="focusbox-title"></h1>
+				<div class="focusbox-text">个人信息页</div>
+			</div>
+		</div>
+		<section class="container">
+            <div class="content-wrap">
+                <div class="content">
+                    <article class="article-content">
+                        <form id="ownSpace" onsubmit="return false">
+
+                            <div class="artc">
+                                <p style="margin-bottom:2px">UID：</p>
+                                <div class="artc-box">
+                                    <textarea placeholder="无法修改" disabled="disabled" class="artc-area" cols="100%" rows="1" required>{{uid}}</textarea>
+                                </div>
+                                <p style="margin-bottom:2px">用户名：</p>
+                                <div class="artc-box">
+                                    <textarea {% if is_self %} placeholder="修改用户名" {% else %} placeholder="需本人修改" disabled="disabled" {% endif %} class="artc-area" name="username" id="own-username" cols="100%" rows="1" required>{{username}}</textarea>
+                                </div>
+                                <p style="margin-bottom:2px">注册时间：</p>
+                                <div class="artc-box">
+                                    <textarea placeholder="无法修改" disabled="disabled" class="artc-area" cols="100%" rows="1" required>{{date_joined|date:"Y-m-d H:i:s"}}</textarea>
+                                </div>
+                                <p style="margin-bottom:2px">最后一次登录时间：</p>
+                                <div class="artc-box">
+                                    <textarea placeholder="无法修改" disabled="disabled" class="artc-area" cols="100%" rows="1" required>{{last_login|date:"Y-m-d H:i:s"}}</textarea>
+                                </div>
+                                <p style="margin-bottom:2px">QQ号码：</p>
+                                <div class="artc-box">
+                                    <textarea {% if is_self %} placeholder="绑定QQ号码" {% else %} placeholder="需本人修改" disabled="disabled" {% endif %} class="artc-area" name="qq" id="own-qq" cols="100%" rows="1" tabindex="1" required>{{qq}}</textarea>
+                                </div>
+                                <div class="artc-ctrl">
+                                    <button class="artc-submit" type="button" id="artc-submit" {% if not is_self %}style="background-color:#ABABA4;border-color:#ABABA4"{% endif %}>
+                                        立即修改
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </article>
+
+                </div>
+            </div>
+            
+            <div class="sidebar">
+                <div class="widget widget-comments">
+                    <h3>最新公告</h3>
+                    <ul>
+                        <li><a href="/staff/update/" title="管理员"><img src="/static/user/avatar/anonymous.jpg" class="avatar avatar-100" height="50" width="50"><div class="inner"><time><strong>告知</strong>2019-05-06 18:30:34</time>实装了修改个人信息的功能，密码和头像的修改还未实装。</div></a></li>
+                    </ul>
+                </div>
+            </div>
+
+		</section>
+		{% include 'footer.html' %}
+    
+        {% endblock %}

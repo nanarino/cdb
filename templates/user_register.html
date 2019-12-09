@@ -18,7 +18,6 @@
 			
 			<div class="mui-content">
 				<form id="register-form" class="mui-input-group" onsubmit="return false">
-                {% csrf_token %}
 					<div class="mui-input-row">
 						<label>昵称</label>
 						<input id='username' name='username' type="text" class="mui-input-clear mui-input" placeholder="请输入昵称" tabindex="1">
@@ -34,7 +33,7 @@
 				</form>
 				<div class="mui-content-padded">
 					<button id='register-btn' class="mui-btn mui-btn-block mui-btn-primary" tabindex="4">注册</button>
-					<div class="link-area"><a href="/user/login">登录</a> <span class="spliter">|</span> <a id='forgetPassword'>找回</a>
+					<div class="link-area"><a href="javascript:location.pathname = '/user/login/';">登录</a> <span class="spliter">|</span> <a id='forgetPassword' href="javascript:rewardsON();rewardsLog('该功能未完成','');">找回</a>
 					</div>
 				</div>
 			</div>	

@@ -1,0 +1,83 @@
+body{
+    background: #fff url(/static/public/img/bg.png) fixed repeat center -60px;
+}
+.focusbox,.footer,.header{
+	background-color:transparent;
+}
+.bg-fix {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  overflow: hidden; }
+  .bg-fix .bg-rotate {
+    position: absolute;
+    height: auto;
+    left: 50%;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-iteration-count: 999;
+    -moz-animation-iteration-count: 999;
+    animation-iteration-count: 999;
+    -webkit-animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    -moz-animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    -webkit-animation-name: bg-rotate;
+    -moz-animation-name: bg-rotate;
+    animation-name: bg-rotate;
+    -webkit-animation-duration: 5s;
+    -moz-animation-duration: 5s;
+    animation-duration: 5s; }
+  .bg-fix .bg-rotate-1 {
+    -webkit-animation-delay: 1s;
+    -moz-animation-delay: 1s;
+    animation-delay: 1s; }
+  .bg-fix .bg-rotate-2 {
+    -webkit-animation-delay: 2s;
+    -moz-animation-delay: 2s;
+    animation-delay: 2s; }
+  .bg-fix .bg-rotate-3 {
+    -webkit-animation-delay: 3s;
+    -moz-animation-delay: 3s;
+    animation-delay: 3s; }
+  .bg-fix .bg-rotate-4 {
+    -webkit-animation-delay: 4s;
+    -moz-animation-delay: 4s;
+    animation-delay: 4s; }
+
+@-webkit-keyframes bg-rotate {
+  0% {
+    -webkit-transform: rotate(0deg); }
+  30% {
+    -webkit-transform: rotate(720deg); }
+  100% {
+    -webkit-transform: rotate(720deg); } }
+
+@-moz-keyframes bg-rotate {
+  0% {
+    -moz-transform: rotate(0deg); }
+  30% {
+    -moz-transform: rotate(720deg); }
+  100% {
+    -moz-transform: rotate(720deg); } }
+
+@keyframes bg-rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  30% {
+    -webkit-transform: rotate(720deg);
+    -moz-transform: rotate(720deg);
+    -ms-transform: rotate(720deg);
+    -o-transform: rotate(720deg);
+    transform: rotate(720deg); }
+  100% {
+    -webkit-transform: rotate(720deg);
+    -moz-transform: rotate(720deg);
+    -ms-transform: rotate(720deg);
+    -o-transform: rotate(720deg);
+    transform: rotate(720deg); } }

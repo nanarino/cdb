@@ -2,11 +2,58 @@
 
 {#首页内容#}
         {% block page-main %}
-        {% include 'header.html' %}
-		<section class="container">
-			<div class="excerpts-none">
-				这里什么都没有
+        {% include 'header_index.html' %}
+        
+        <link rel="stylesheet" href="/static/public/css/bg.css" type="text/css">
+        <div class="bg-fix">
+            <img src="/static/public/img/rotate_yellow.png" alt="" class="bg-rotate bg-rotate-1" style="margin-left:500px; top:17px; width:175px;">
+            <img src="/static/public/img/rotate_red.png" alt="" class="bg-rotate bg-rotate-2" style="margin-left:608px; top:350px; width:64px;">
+            <img src="/static/public/img/rotate_yellow.png" alt="" class="bg-rotate bg-rotate-4" style="margin-left:400px; top:396px; width:60px;">
+            <img src="/static/public/img/rotate_blue.png" alt="" class="bg-rotate bg-rotate-3" style="margin-left:416px; top:526px; width:125px;">
+
+            <img src="/static/public/img/rotate_yellow.png" alt="" class="bg-rotate bg-rotate-2" style="margin-left:-616px; top:113px; width:60px;">
+            <img src="/static/public/img/rotate_blue.png" alt="" class="bg-rotate bg-rotate-1" style="margin-left:-546px; top:300px; width:40px;">
+            <img src="/static/public/img/rotate_blue.png" alt="" class="bg-rotate bg-rotate-3" style="margin-left:-280px; top:460px; width:60px;">
+            <img src="/static/public/img/rotate_yellow.png" alt="" class="bg-rotate bg-rotate-4;" style="margin-left:-648px; top:490px; width:100px;">
+        </div>
+        
+        <div class="focusbox">
+			<div class="container">
+				<h1 class="focusbox-title">本站什么都没有</h1>
+				<div class="focusbox-text">以下是资料链接/友情链接，均不在本域名下。</div>
 			</div>
+		</div>
+        
+        
+		<section class="container">
+            <div class="tagslist">
+                <ul>
+                    <li>
+                        <a class="name" href="http://www.akokono.com:8024/" target="_blank">资料链接</a><small>笔记</small>
+                        <p><a class="tit" href="http://www.akokono.com:8024/" target="_blank">编程基础学习</a></p>
+                    </li>
+                    <li>
+                        <a class="name" href="http://www.to1y5.com/" target="_blank">友情链接</a><small>blog</small>
+                        <p><a class="tit" href="http://www.to1y5.com/" target="_blank">安全干员的博客</a></p>
+                    </li>
+                    <li>
+                        <a class="name" href="https://blog.dadiopi.top" target="_blank">友情链接</a><small>blog</small>
+                        <p><a class="tit" href="https://blog.dadiopi.top" target="_blank">隔壁老嘤的博客</a></p>
+                    </li>
+                    <li>
+                        <a class="name" href="https://liuloli.com/" target="_blank">友情链接</a><small>blog</small>
+                        <p><a class="tit" href="https://liuloli.com/" target="_blank">liuloli的图站</a></p>
+                    </li>
+                    <li>
+                        <a class="name" href="http://www.qianheye.cn/" target="_blank">友情链接</a><small>blog</small>
+                        <p><a class="tit" href="http://www.qianheye.cn/" target="_blank">千鹤鵺的博客</a></p>
+                    </li>
+                    <li>
+                        <a class="name" href="http://www.liaoyuanfang.xyz" target="_blank">友情链接</a><small>blog</small>
+                        <p><a class="tit" href="http://www.liaoyuanfang.xyz" target="_blank">元芳的blog</a></p>
+                    </li>
+                </ul>
+            </div>
 		</section>
         {% include 'footer.html' %}
         {% endblock %}

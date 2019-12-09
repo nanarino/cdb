@@ -1,0 +1,77 @@
+{% extends 'layout.html' %}
+{#图册阅览页内容#}
+
+		{% block page-main %}
+    
+        {% include 'header.html' %}
+        <script type="text/javascript" src="/static/picture/js/bodyClass.js"></script>
+        {% if userId %}
+        <script type="text/javascript" src="/static/public/js/add_comment.js"></script>
+        {% else %}
+        {% endif %}
+		<section class="container">
+            <div class="content-wrap">
+                <div class="content">
+                    <header class="article-header">
+                        <h1 class="article-title">{{album.title}}</h1>
+                        <div class="article-meta">
+                            <span class="item item-1">{{album.time|date:"Y-m-d H:i:s"}}</span>
+                            <span class="item item-2">作者：<a href="/relaxation/ownSpace/?userId={{album.publisher.id}}">{{album.publisher.username}}</a></span>
+                            <span class="item item-3">分类：{{album.motif|default:"无"}}</span>
+                        </div>
+                    </header>
+                    <article class="article-content">
+                    
+                    </article>
+                    <div class="article-actions clearfix">
+                        <div class="shares">
+                            <strong>分享到：</strong><a href="javascript:;" class="share-weixin" title="分享到微信"><i class="fa">&#xe60e;</i></a><a class="share-tsina" title="分享到微博"><i class="fa">&#xe608;</i></a><a class="share-tqq" title="分享到腾讯微博"><i class="fa">&#xe60c;</i></a><a class="share-sqq" title="分享到QQ好友"><i class="fa">&#xe609;</i></a><a class="share-qzone" title="分享到QQ空间"><i class="fa">&#xe607;</i></a><a class="share-renren" title="分享到人人网"><i class="fa">&#xe60a;</i></a><a class="share-douban" title="分享到豆瓣网"><i class="fa">&#xe60b;</i></a><a class="share-line" title="分享到Line"><i class="fa">&#xe69d;</i></a><a class="share-twitter" title="分享到Twitter"><i class="fa">&#xe902;</i></a><a class="share-facebook" title="分享到Facebook"><i class="fa">&#xe725;</i></a>
+                        </div>
+                        <a href="javascript:var als = $('.action-like span');als.html(Number(als.html())+1);" class="action-like"><i class="fa">&#xe60d;</i>赞(<span>0</span>)</a>
+                    </div>
+                    <h3 class="comments-title" id="comments">评论<small>抢沙发</small></h3>
+                    <div id="respond" class="comments-respond no_webshot">
+                        <form id="commentform" onsubmit="return false">
+                            <div class="comt">
+                                <div class="comt-title">
+                                    <img src="/static/user/avatar/{% if userId %}akr{% load calculation %}{{userId|rema:4}}{% else %}anonymous{% endif %}.jpg" class="avatar avatar-100" height="50" width="50">
+                                    <p><a id="cancel-comment-reply-link" href="javascript:;">取消</a></p>
+                                </div>
+                                <div class="comt-box">
+                                    <input id='username' name='albumId' type="hidden" value={{album.id}} >
+                                    <textarea {% if userId %}placeholder="你的评论可以一针见血"{% else %} placeholder="登录之后才能评论" readonly="readonly"{% endif %} class="comt-area" name="comment" id="comment" cols="100%" rows="3" onkeydown="if(event.ctrlKey&amp;&amp;event.keyCode==13){document.getElementById('submit').click();return false};"></textarea>
+                                    <div class="comt-ctrl">
+                                        <button class="comt-submit" name="submit" id="submit" {% if userId %}{% else %}style="background-color:#ABABA4;border-color:#ABABA4"{% endif %}>提交评论</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sidebar">
+                <div class="widget widget-comments">
+                    <h3>最新评论</h3>
+                    <ul>
+                        <li><a href="/staff/update/" title="管理员"><img src="/static/user/avatar/anonymous.jpg" class="avatar avatar-100" height="50" width="50"><div class="inner"><time><strong>告知</strong>2019-04-18 08:56:07</time>上传时的图片文件名中含有某些特殊符号可能会导致上传后无法正常显示，已经修复但不排除其他未知符号可能造成的问题，请尽量使用字母和数字作为文件名。</div></a></li>
+                        {% for comment in comment_list %}
+                        <li><a href="/relaxation/ownSpace/?userId={{comment.writer.id}}" title="{{comment.writer.username}}"><img src="/static/user/avatar/akr{% load calculation %}{{comment.writer.id|to_int|rema:4}}.jpg" class="avatar avatar-100" height="50" width="50"><div class="inner"><time><strong>{{comment.writer.username}}</strong>{{comment.time|date:"Y-m-d H:i:s"}}</time>{{comment.content}}</div></a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+                
+            <script>
+                madata='{{album.imgurl | safe}}'.replace(/\\/g,"\/")
+                data=JSON.parse(madata)
+                var ecpTag=''
+                for(i in data){
+                    ecpTag=ecpTag+'<p><img class="aligncenter size-full" src="'+location.origin+'\/'+data[i]+'"/></p>'
+                }
+                $(".article-content").append(ecpTag)
+            </script>
+		</section>
+        {% include 'footer.html' %}
+    
+        {% endblock %}
