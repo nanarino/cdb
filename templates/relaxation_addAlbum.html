@@ -1,44 +1,74 @@
 {% extends 'layout.html' %}
 {#相册发表页内容#}
 
-		{% block page-main %}
-    
-        {% include 'header.html' %}
-
-		<link rel="stylesheet" href="/static/relaxation/css/add-input.css" type="text/css">
-		<script type="text/javascript" src="/static/relaxation/js/addAlbum.js"></script>
+        {% block page-main %}
         
-		<div class="focusbox">
-			<div class="container">
-				<h1 class="focusbox-title"></h1>
-				<div class="focusbox-text">上传图集(只限PC端谷歌内核,上传时请耐心等待)</div>
-			</div>
-		</div>
-		<section class="container">
-			
-			<form id="albumform" onsubmit="return false">
-				<div class="artc">
-					<div class="artc-box">
-						<textarea placeholder="标题" class="artc-area" name="title" id="album-title" cols="100%" rows="1" tabindex="1" required></textarea>
-					</div>
-                    <div class="artc-box">
-						<textarea placeholder="分类" class="artc-area" name="motif" id="album-motif" cols="100%" rows="1" tabindex="2" required></textarea>
-					</div>
-                    <p style="padding-top:10px">请拖动图片放入方框↓</p>
-					<div class="artc-box" style="height:50vh" id="upload">
-                        <!--<input type="file" name="file" id="file_upload">-->
-					</div>
-					<div class="artc-ctrl">
-						<button class="artc-submit" type="button" id="artc-submit" tabindex="3">
-							立即发布
-						</button>
-					</div>
-				</div>
-			</form>
+        {% include 'header.html' %}
+        
+        {% verbatim %}
+        <link rel="stylesheet" href="/static/relaxation/css/add-input.css" type="text/css">
+        <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+        <script type="text/javascript" src="/static/relaxation/js/addAlbum.js"></script>
+        <div id='app'>    
+            <div class="focusbox">
+                <div class="container">
+                    <h1 class="focusbox-title">上传图集（请用Chrome）</h1>
+                    <div class="focusbox-text">张数限制：{{this.imgList.length}} / {{this.maxNumber}} 张 大小：{{this.bySize}}</div>
+                </div>
+            </div>
+            <section class="container">
+                
+                <form id="albumform" onsubmit="return false">
+                    <div class="artc">
+                        <div class="artc-box">
+                            <textarea placeholder="标题" class="artc-area" v-model="title" id="album-title" cols="100%" rows="1" tabindex="1" required></textarea>
+                        </div>
+                        <div class="artc-box">
+                            <textarea placeholder="分类" class="artc-area" v-model="motif" id="album-motif" cols="100%" rows="1" tabindex="2" required></textarea>
+                        </div>
+                        <p style="padding-top:10px">批量拖动图片到方框↓</p>
 
-			
-
-		</section>
-		{% include 'footer.html' %}
+                        <div 
+                            class="artc-box"
+                            style="height:50vh"
+                            @drop="drop($event)"
+                            @dragenter="dragenter($event)"
+                            @dragover="dragover($event)"
+                        >
+                            <div 
+                                class="photo-item" 
+                                v-show="imgList.length > 0"
+                                v-for="(item, index) in imgList"
+                                :key="index"
+                            >
+                                <div class="pic-img">
+                                    <img :src="item.file.src" @click="delImg(index)">
+                                </div>
+                            </div>
+                            <div class="photo-item-btn">
+                                <input
+                                    type="file"
+                                    name="upimg"
+                                    accept="image/*"
+                                    class="fileimg"
+                                    ref="updateimg"
+                                    @change="updateImg($event)"
+                                />
+                                <span>添加单张</span>
+                            </div>
+                        </div>
+                        
+                        <div class="artc-ctrl">
+                            <button class="artc-submit" type="button" id="artc-submit" tabindex="3" @click="postData">
+                                立即发布
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </div>
+        {% endverbatim %}
+        
+        {% include 'footer.html' %}
     
         {% endblock %}
