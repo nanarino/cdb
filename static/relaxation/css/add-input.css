@@ -23,8 +23,8 @@
 	color: #666;
 	height: 26px
 }
-[name=content]{
-	height: 202px
+[name=content],.img-box{
+	height: 30vh
 }
 
 .artc-ctrl {

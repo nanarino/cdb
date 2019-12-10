@@ -12,8 +12,8 @@
         <div id='app'>    
             <div class="focusbox">
                 <div class="container">
-                    <h1 class="focusbox-title">上传图集（请用Chrome）</h1>
-                    <div class="focusbox-text">张数限制：{{this.imgList.length}} / {{this.maxNumber}} 张 大小：{{this.bySize}}</div>
+                    <h1 class="focusbox-title"></h1>
+                    <div class="focusbox-text">上传图集（请用Chrome，已选大小：{{this.bySize}}，限制：{{this.imgList.length}}/{{this.maxNumber}}张）</div>
                 </div>
             </div>
             <section class="container">
@@ -29,8 +29,7 @@
                         <p style="padding-top:10px">批量拖动图片到方框↓</p>
 
                         <div 
-                            class="artc-box"
-                            style="height:50vh"
+                            class="artc-box img-box"
                             @drop="drop($event)"
                             @dragenter="dragenter($event)"
                             @dragover="dragover($event)"
