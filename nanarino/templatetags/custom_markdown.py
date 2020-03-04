@@ -17,7 +17,7 @@ def trans(html_code):
 @stringfilter  # 希望字符串作为参数
 def custom_markdown(value):
     html_code = markdown.markdown(value,extensions=['markdown.extensions.fenced_code', 'markdown.extensions.codehilite'],safe_mode=True,enable_attributes=False)
-    # python不允许不定长的先行断言，如：
+    # python不允许不定长的后行零宽断言，如：
     # r'(?<!\<code\>(?!.*\<\/code\>).*?)\<.*?script.*?\>(?!(?!.*?\<code\>).*\<\/code\>)'
     html_code = re.sub(r'(?P<tag>\<\/?\s*script.*?\>)', trans, html_code, flags=re.IGNORECASE)
     html_code = re.sub(r'(?P<tag>\<\s*img.*?\>)', trans, html_code, flags=re.IGNORECASE)
