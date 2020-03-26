@@ -8,11 +8,13 @@
 
 ## 展示
 
-项目暂时被部署在 http://www.akokono.com/
+项目暂时被部署在 https://www.akokono.com/
 
-也可以去某视频网站上找到演示。
+也可以去某视频网站上找到演示（大雾
 
 
+
+## 测试
 
 ### 环境
 
@@ -86,8 +88,8 @@ pip3 install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 #cdb/settings.py 
 
 #第28行
-
-ALLOWED_HOSTS = ["127.0.0.1","www.******.com",]  #改成你的域名，
+ALLOWED_HOSTS = ["127.0.0.1","www.akokono.com"]  #改成你的域名，
+#此时只会放行"www.akokono.com"，而"akokono.com"将会是500或者其他项目的页面。
 
 
 #第92行
@@ -96,7 +98,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         "HOST":"127.0.0.1",
         "PORT":3306,
-        'NAME':"cdbproject",
+        'NAME':"cdbproject", #改成你的项目库名
         "USER":"root",
         "PASSWORD":"****" #改成你的mysql密码
     }
@@ -141,7 +143,7 @@ python3 manage.py runserver 0.0.0.0:80
 
 
 
-### 生产环境
+## 生产
 
 采用业界标准的`uwsgi` + `nginx`方式来部署。
 
@@ -152,6 +154,15 @@ python3 manage.py runserver 0.0.0.0:80
 `C:\Users\Administrator\AppData\Local\Programs\Python\Python37\Lib\site-packages\django\contrib\admin\static\admin`目录中，
 
 将其拷贝到项目的static目录，以便被nginx访问。
+
+宝塔安装的nginx的配置目录一般是`/www/server/nginx/conf/`
+
+修改配置：
+
+```python
+#cdb/settings.py 第26行
+DEBUG = False
+```
 
 测试启动：
 
@@ -171,3 +182,8 @@ uwsgi --ini uwsgi.ini
 killall -9 uwsgi
 ```
 
+
+
+### SSL
+
+https://help.aliyun.com/knowledge_detail/95491.html
