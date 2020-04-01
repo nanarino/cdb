@@ -1,3 +1,3 @@
-$(document).ready(function(){
+$(document).ready(function () {
 	$('body').addClass('page-template-blank')
 })

@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 {#图册阅览页内容#}
 
-		{% block page-main %}
+        {% block page-main %}
     
         {% include 'header.html' %}
         <script type="text/javascript" src="/static/picture/js/bodyClass.js"></script>
@@ -9,7 +9,7 @@
         <script type="text/javascript" src="/static/public/js/add_comment.js"></script>
         {% else %}
         {% endif %}
-		<section class="container">
+        <section class="container">
             <div class="content-wrap">
                 <div class="content">
                     <header class="article-header">
@@ -71,7 +71,7 @@
                 }
                 $(".article-content").append(ecpTag)
             </script>
-		</section>
+        </section>
         {% include 'footer.html' %}
     
         {% endblock %}

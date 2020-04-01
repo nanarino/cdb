@@ -1,44 +1,44 @@
 {% extends 'layout.html' %}
 {#注册页内容#}
 
-		{% block page-main %}
+        {% block page-main %}
     
         {% include 'header.html' %}
-		<link rel="stylesheet" href="/static/user/css/mui-input.css" type="text/css">
-		<link rel="stylesheet" href="/static/user/css/register-bgi.css" type="text/css">
-		<script type="text/javascript" src="/static/user/js/register-mui-input.js"></script>
-		
-		<div class="focusbox">
-			<div class="container">
-				<h1 class="focusbox-title"></h1>
-				<div class="focusbox-text">会员注册</div>
-			</div>
-		</div>
-		<section class="container">
-			
-			<div class="mui-content">
-				<form id="register-form" class="mui-input-group" onsubmit="return false">
-					<div class="mui-input-row">
-						<label>昵称</label>
-						<input id='username' name='username' type="text" class="mui-input-clear mui-input" placeholder="请输入昵称" tabindex="1">
-					</div>
-					<div class="mui-input-row">
-						<label>密码</label>
-						<input id='password' name='password' type="password" class="mui-input-clear mui-input" placeholder="请输入密码" tabindex="2">
-					</div>
-					<div class="mui-input-row">
-						<label>确认</label>
-						<input id='password_confirm' type="password" class="mui-input-clear mui-input" placeholder="请确认密码" tabindex="3" onkeydown="if(event.ctrlKey&&event.keyCode==13){checkUser();return false};">
-					</div>
-				</form>
-				<div class="mui-content-padded">
-					<button id='register-btn' class="mui-btn mui-btn-block mui-btn-primary" tabindex="4">注册</button>
-					<div class="link-area"><a href="javascript:location.pathname = '/user/login/';">登录</a> <span class="spliter">|</span> <a id='forgetPassword' href="javascript:rewardsON();rewardsLog('该功能未完成','');">找回</a>
-					</div>
-				</div>
-			</div>	
-				
-		</section>
+        <link rel="stylesheet" href="/static/user/css/mui-input.css" type="text/css">
+        <link rel="stylesheet" href="/static/user/css/register-bgi.css" type="text/css">
+        <script type="text/javascript" src="/static/user/js/register-mui-input.js"></script>
+        
+        <div class="focusbox">
+            <div class="container">
+                <h1 class="focusbox-title"></h1>
+                <div class="focusbox-text">会员注册</div>
+            </div>
+        </div>
+        <section class="container">
+            
+            <div class="mui-content">
+                <form id="register-form" class="mui-input-group" onsubmit="return false">
+                    <div class="mui-input-row">
+                        <label>昵称</label>
+                        <input id='username' name='username' type="text" class="mui-input-clear mui-input" placeholder="请输入昵称" tabindex="1">
+                    </div>
+                    <div class="mui-input-row">
+                        <label>密码</label>
+                        <input id='password' name='password' type="password" class="mui-input-clear mui-input" placeholder="请输入密码" tabindex="2">
+                    </div>
+                    <div class="mui-input-row">
+                        <label>确认</label>
+                        <input id='password_confirm' type="password" class="mui-input-clear mui-input" placeholder="请确认密码" tabindex="3" onkeydown="if(event.ctrlKey&&event.keyCode==13){checkUser();return false};">
+                    </div>
+                </form>
+                <div class="mui-content-padded">
+                    <button id='register-btn' class="mui-btn mui-btn-block mui-btn-primary" tabindex="4">注册</button>
+                    <div class="link-area"><a href="javascript:location.pathname = '/user/login/';">登录</a> <span class="spliter">|</span> <a id='forgetPassword' href="javascript:rewardsON();rewardsLog('该功能未完成','');">找回</a>
+                    </div>
+                </div>
+            </div>  
+                
+        </section>
         {% include 'footer.html' %}
     
         {% endblock %}
