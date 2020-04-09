@@ -28,7 +28,7 @@ window.onload = () => {
     Controller.style.left = (2 * jigsawW - 75) + 'px';
     Controller.style.top = (2 * jigsawW - 75) + 'px';
     Controller.style.display = "none";
-    let detime = 0, imgpath = "<img src='img" + ~~(Math.random() * 3) + "/img";
+    let detime = 0, imgpath = "<img src='/static/s/img" + ~~(Math.random() * 3) + "/img";
     const pstArr = (new Array(16).fill()).map((i, j) => ('0' + j.toString(4)).slice(-2));
     const last = window.jigsaw33;
     const jigsawInit = i => {//初始化拼图位置和宽高
