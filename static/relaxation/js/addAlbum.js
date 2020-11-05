@@ -45,8 +45,7 @@ $(document).ready(function () {
                 }
             },
             updateImg(el) {
-                if (!el.target.files[0].size) return;
-                if (this.imgList.length >= this.maxNumber) {
+                if (this.imgList.length + el.target.files.length > this.maxNumber) {
                     rewardsON()
                     rewardsLog('操作失败', "已经超出张数！！！")
                     return;
