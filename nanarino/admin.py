@@ -2,6 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 
-from nanarino.models import Article
+from . import models
 
-admin.site.register(Article)
+for table in models.__all__:
+    admin.site.register(getattr(models, table))

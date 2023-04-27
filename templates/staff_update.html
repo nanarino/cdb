@@ -1,12 +1,25 @@
 {% extends 'layout.html' %}
-{#工作组页内容#}
+{#公告页内容#}
 
-		{% block page-main %}
+        {% block page-main %}
     
         {% include 'header.html' %}
+        <script type="text/javascript" src="/static/staff/js/bodyClass.js"></script>
+        
         <link rel="stylesheet" href="/static/staff/css/update-table.css" type="text/css">
-		<section class="container">
-			<article class="article-content">          
+        <section class="container">
+            <article class="article-content">
+            
+                <header class="article-header">
+                    <h1 class="article-title">公告</h1>
+                </header>
+                <article class="article-content">
+                    <p style="text-align: center;">停止更新，定期删库，issues不看，</p>
+                    <p style="text-align: center;">找回密码功能不想做，忘了就再创</p>
+                    <p style="text-align: center;"><span style="color:red">请发表健康内容</span></p>
+                    <p style="text-align: center;">以上</p>
+                </article>
+                
                 <table border="1">
                     <tr><th colspan="2">工作组->更新日志</th></tr>
                     <tr><td>2019年1月01日19:29</td><td>cdb0.0项目开始启动 后台使用Koa2</td></tr>
@@ -21,18 +34,30 @@
                     <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
                     <tr><td>2019年3月12日23:45</td><td>删库 重新设计了表 用户表继承AbstractUser</td></tr>
                     <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
-                    <tr><td rowspan="3">2019年3月17日16:38</td><td>所有表单调整为ajax请求</td></tr>
+                    <tr><td rowspan="3">2019年3月17日16:38</td><td>所有表单调整为ajax请求，更新了弹窗层外观</td></tr>
                     <tr><td>&nbsp;</td></tr>
-                    <tr><td>更新了ajax请求的弹窗层外观</td></tr>
+                    <tr><td>发表随笔功能支持markdown语法</td></tr>
                     <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
                     <tr><td rowspan="3">2019年3月20日17:06</td><td>更新了后花园和工作组界面图标</td></tr>
                     <tr><td>&nbsp;</td></tr>
                     <tr><td>更新了未实现的功能的弹窗提示</td></tr>
                     <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                    <tr><td rowspan="3">2019年3月26日02:12</td><td>更新了发表图集的功能</td></tr>
+                    <tr><td>&nbsp;</td></tr>
+                    <tr><td>更新了播放音乐功能</td></tr>
+                    <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                    <tr><td>2019年4月18日08:56</td><td>修复了文件名导致的上传图片异常的问题</td></tr>
+                    <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                    <tr><td>2019年4月19日14:20</td><td>实装了随笔和图集的点赞评论功能</td></tr>
+                    <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                    <tr><td rowspan="3">2019年5月6日18:30</td><td>实装了修改个人信息的功能</td></tr>
+                    <tr><td>&nbsp;</td></tr>
+                    <tr><td>所有用户随机分配4种默认头像，在评论区中显示</td></tr>
+                    <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
                 </table>
-			</article>
+            </article>
 
-		</section>
+        </section>
         {% include 'footer.html' %}
     
         {% endblock %}

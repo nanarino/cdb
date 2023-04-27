@@ -1,0 +1,135 @@
+{% extends 'layout.html' %}
+{#歌单播放页内容#}
+
+        {% block page-main %}
+    
+        {% include 'header.html' %}
+        
+        <script type="text/javascript" src="/static/picture/js/bodyClass.js"></script>
+
+        
+        <div class="focusbox">
+            <div class="container">
+                <div class="focusbox-text">返回主界面将关闭播放</div>
+            </div>
+        </div>
+        
+        <section class="container">
+            <div class="content-wrap">
+                <div class="content">
+                    <header class="article-header">
+                        <h1 class="article-title">{% if audioId %}初音のうた{% else %}akokono的翻唱{% endif %}</h1>
+                        <div class="article-meta">
+                            <span class="item item-1">{% if audioId %}2019-04-04 16:09:26{% else %}2018-12-04 14:28:13{% endif %}</span>
+                            <span class="item item-2">上传：<a href="/relaxation/ownSpace/?userId=1">nanarino</a></span>
+                            <span class="item item-3">分类：{% if audioId %}初音{% else %}翻唱{% endif %}</span>
+                        </div>
+                    </header>
+                    <article class="article-content">
+
+                        <link rel="stylesheet" href="/static/music/lib/APlayer.min.css">
+                        <script src="/static/music/lib/APlayer.min.js"></script>   
+                        <div class="aplayer"></div>
+                        
+                        <script>
+                            const ap = new APlayer({
+                                container: $(".aplayer")[0],
+                                preload: 'none',
+                                listMaxHeight: 90,
+                                lrcType: 3,
+                                audio: [
+                                    {% if audioId %}
+                                    {
+                                        name: '鸟之诗',
+                                        artist: '初音ミク',
+                                        url: '/static/music/audio/初音ミク - 鸟之诗.mp3',
+                                        cover: '/static/public/img/miku.gif',
+                                        lrc: '/static/music/lrc/初音ミク - 鸟之诗.lrc',
+                                        theme: '#ebd0c2'
+                                    },
+                                    {
+                                        name: 'ツギハギスタッカート',
+                                        artist: '初音ミク',
+                                        url: '/static/music/audio/初音ミク - ツギハギスタッカート.mp3',
+                                        cover: '/static/public/img/miku.gif',
+                                        lrc: '/static/music/lrc/初音ミク - ツギハギスタッカート.lrc',
+                                        theme: '#eb99c2'
+                                    },
+                                    {% else %}
+                                    {
+                                        name: '阴天快乐（Cover 陈奕迅）',
+                                        artist: 'akokono',
+                                        url: '/static/music/audio/阴天快乐（Cover 陈奕迅）.mp3',
+                                        cover: '/static/public/img/miku.gif',
+                                        lrc: '/static/music/lrc/阴天快乐（Cover 陈奕迅）.lrc',
+                                        theme: '#6967aa'
+                                    },
+                                    {
+                                        name: '小幸运',
+                                        artist: 'akokono',
+                                        url: '/static/music/audio/小幸运.mp3',
+                                        cover: '/static/public/img/miku.gif',
+                                        lrc: '/static/music/lrc/小幸运.lrc',
+                                        theme: '#4567aa'
+                                    },
+                                    {
+                                        name: '成都',
+                                        artist: 'akokono',
+                                        url: '/static/music/audio/成都.mp3',
+                                        cover: '/static/public/img/miku.gif',
+                                        lrc: '/static/music/lrc/成都.lrc',
+                                        theme: '#2167aa'
+                                    },
+                                    {
+                                        name: '告白气球（Cover 周杰伦）',
+                                        artist: 'akokono',
+                                        url: '/static/music/audio/告白气球（Cover 周杰伦）.mp3',
+                                        cover: '/static/public/img/miku.gif',
+                                        lrc: '/static/music/lrc/告白气球（Cover 周杰伦）.lrc',
+                                        theme: '#0d67aa'
+                                    },
+                                    {% endif %}
+                                ]
+                            });
+                        </script>
+                        
+                    </article>
+                    <div class="article-actions clearfix">
+                        <div class="shares">
+                            <strong>分享到：</strong><a href="javascript:;" class="share-weixin" title="分享到微信"><i class="fa">&#xe60e;</i></a><a class="share-tsina" title="分享到微博"><i class="fa">&#xe608;</i></a><a class="share-tqq" title="分享到腾讯微博"><i class="fa">&#xe60c;</i></a><a class="share-sqq" title="分享到QQ好友"><i class="fa">&#xe609;</i></a><a class="share-qzone" title="分享到QQ空间"><i class="fa">&#xe607;</i></a><a class="share-renren" title="分享到人人网"><i class="fa">&#xe60a;</i></a><a class="share-douban" title="分享到豆瓣网"><i class="fa">&#xe60b;</i></a><a class="share-line" title="分享到Line"><i class="fa">&#xe69d;</i></a><a class="share-twitter" title="分享到Twitter"><i class="fa">&#xe902;</i></a><a class="share-facebook" title="分享到Facebook"><i class="fa">&#xe725;</i></a>
+                        </div>
+                        <a href="javascript:var als = $('.action-like span');als.html(Number(als.html())+1);" class="action-like"><i class="fa">&#xe60d;</i>赞(<span>0</span>)</a>
+                    </div>
+                    <h3 class="comments-title" id="comments">评论<small>未开放</small></h3>
+                    <div id="respond" class="comments-respond no_webshot">
+                        <form id="commentform" onsubmit="return false">
+                            <div class="comt">
+                                <div class="comt-title">
+                                    <img src="/static/user/avatar/{% if userId %}akr{% load calculation %}{{userId|rema:4}}{% else %}anonymous{% endif %}.jpg" class="avatar avatar-100" height="50" width="50">
+                                    <p><a id="cancel-comment-reply-link" href="javascript:;">取消</a></p>
+                                </div>
+                                <div class="comt-box">
+                                    <textarea readonly="readonly" placeholder="本歌单的评论功能暂未开通" class="comt-area" name="comment" id="comment" cols="100%" rows="3" onkeydown="if(event.ctrlKey&amp;&amp;event.keyCode==13){document.getElementById('submit').click();return false};"></textarea>
+                                    <div class="comt-ctrl">
+                                        <button class="comt-submit" name="submit" id="submit" style="background-color:#ABABA4;border-color:#ABABA4">提交评论</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sidebar">
+                <div class="widget widget-comments">
+                    <h3>最新评论</h3>
+                    <ul>
+                        <li><a href="/staff/update/" title="管理员"><img src="/static/user/avatar/anonymous.jpg" class="avatar avatar-100" height="50" width="50"><div class="inner"><time><strong>告知</strong>2019-03-26 02:12:35</time>有一点小bug：只有当前播放的音乐全部缓存完毕才能使用进度条，也就是说要先听完一整遍后再刷新才能使用进度条。</div></a></li>
+                    </ul>
+                </div>
+            </div>
+   
+        </section>
+        {% include 'footer.html' %}
+    
+        {% endblock %}

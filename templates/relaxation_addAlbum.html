@@ -1,0 +1,74 @@
+{% extends 'layout.html' %}
+{#相册发表页内容#}
+
+        {% block page-main %}
+        
+        {% include 'header.html' %}
+        
+        {% verbatim %}
+        <link rel="stylesheet" href="/static/relaxation/css/add-input.css" type="text/css">
+        <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+        <script type="text/javascript" src="/static/relaxation/js/addAlbum.js"></script>
+        <div id='app'>    
+            <div class="focusbox">
+                <div class="container">
+                    <h1 class="focusbox-title"></h1>
+                    <div class="focusbox-text">上传图集（请用Chrome，已选大小：{{this.bySize}}，限制：{{this.imgList.length}}/{{this.maxNumber}}张）</div>
+                </div>
+            </div>
+            <section class="container">
+                
+                <form id="albumform" onsubmit="return false">
+                    <div class="artc">
+                        <div class="artc-box">
+                            <textarea placeholder="标题" class="artc-area" v-model="title" id="album-title" cols="100%" rows="1" tabindex="1" required></textarea>
+                        </div>
+                        <div class="artc-box">
+                            <textarea placeholder="分类" class="artc-area" v-model="motif" id="album-motif" cols="100%" rows="1" tabindex="2" required></textarea>
+                        </div>
+                        <p style="padding-top:10px">批量拖动图片到方框↓</p>
+
+                        <div 
+                            class="artc-box img-box"
+                            @drop="drop($event)"
+                            @dragenter="dragenter($event)"
+                            @dragover="dragover($event)"
+                        >
+                            <div 
+                                class="photo-item" 
+                                v-show="imgList.length > 0"
+                                v-for="(item, index) in imgList"
+                                :key="index"
+                            >
+                                <div class="pic-img">
+                                    <img :src="item.file.src" @click="delImg(index)">
+                                </div>
+                            </div>
+                            <div class="photo-item-btn">
+                                <input
+                                    type="file"
+                                    name="upimg"
+                                    accept="image/*"
+                                    class="fileimg"
+                                    ref="updateimg"
+                                    @change="updateImg($event)"
+                                    multiple
+                                />
+                                <span style="text-align:center">添加</span>
+                            </div>
+                        </div>
+                        
+                        <div class="artc-ctrl">
+                            <button class="artc-submit" type="button" id="artc-submit" tabindex="3" @click="postData">
+                                立即发布
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </div>
+        {% endverbatim %}
+        
+        {% include 'footer.html' %}
+    
+        {% endblock %}

@@ -352,7 +352,7 @@ input[type="search"] {
 @font-face {
 	font-family: 'iconfont';
 	src: url("/static/public/fonts/iconfont.eot");
-	src: url("/static/public/fonts/iconfont.eot?#iefix") format("embedded-opentype"), url("/static/public/fonts/iconfont.woff") format("woff"), url("/static/public/fonts/iconfont.ttf") format("truetype"), url("/static/public/fonts/iconfont.svg#iconfont") format("svg")
+	src: url("/static/public/fonts/iconfont.woff") format("woff"), url("/static/public/fonts/iconfont.ttf") format("truetype")
 }
 
 .fa {
@@ -2570,9 +2570,9 @@ body {
 .article-content pre {
 	margin: 20px 0;
 	font: 12px/20px 'courier new';
-	background: #4A4A4A;
+	background: #282c34;
 	padding: 10px 20px;
-	color: #F8F8D4;
+	color: #fff;
 	border: none
 }
 
@@ -4279,10 +4279,10 @@ body {
 }
 
 .comt-ctrl {
-	background-color: #fbfbfb;
+	background-color: #fffefe;
 	height: 36px;
 	margin-left: -10px;
-	border-top: solid 1px #f2f2f2
+	border-top: solid 1px #ffeeee
 }
 
 .comt-submit {

@@ -1,0 +1,14 @@
+code,
+kbd,
+pre,
+samp {
+	font-family: source-code-pro,Menlo,Monaco,Consolas,Courier New,monospace
+}
+
+pre{
+    border-radius: 6px
+}
+
+.markdown ::selection{background-color:#cc3366; color:#fff;}
+.markdown ::-webkit-selection{background-color:#cc3366;color: #fff;} 
+.markdown ::-moz-selection{background-color:#cc3366;color: #fff;} 

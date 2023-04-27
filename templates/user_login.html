@@ -1,41 +1,40 @@
 {% extends 'layout.html' %}
 {#登录页内容#}
 
-		{% block page-main %}
+        {% block page-main %}
     
         {% include 'header.html' %}
-		<link rel="stylesheet" href="/static/user/css/mui-input.css" type="text/css">
-		<link rel="stylesheet" href="/static/user/css/login-bgi.css" type="text/css">
-		<script type="text/javascript" src="/static/user/js/login-mui-input.js"></script>
-		
-		<div class="focusbox">
-			<div class="container">
-				<h1 class="focusbox-title"></h1>
-				<div class="focusbox-text">会员登录</div>
-			</div>
-		</div>
-		<section class="container">
+        <link rel="stylesheet" href="/static/user/css/mui-input.css" type="text/css">
+        <link rel="stylesheet" href="/static/user/css/login-bgi.css" type="text/css">
+        <script type="text/javascript" src="/static/user/js/login-mui-input.js"></script>
+        
+        <div class="focusbox">
+            <div class="container">
+                <h1 class="focusbox-title"></h1>
+                <div class="focusbox-text">会员登录</div>
+            </div>
+        </div>
+        <section class="container">
 
-			<div class="mui-content">
-				<form id='login-form' class="mui-input-group" onsubmit="return false">
-                {% csrf_token %}
-					<div class="mui-input-row">
-						<label>昵称</label>
-						<input id='username' name='username' type="text" class="clearfix mui-input" placeholder="请输入昵称" tabindex="1" autocomplete=off>
-					</div>
-					<div class="mui-input-row">
-						<label>密码</label>
-						<input id='password' name='password' type="password" class="clearfix mui-input" placeholder="请输入密码" tabindex="2" autocomplete=off>
-					</div>
-				</form>
-				<div class="mui-content-padded">
-					<button id='login-btn' type="button" class="mui-btn mui-btn-block mui-btn-primary" tabindex="3">登录</button>
-					<div class="link-area"><a href="/user/register">注册</a> <span class="spliter">|</span> <a id='forgetPassword'>找回</a>
-					</div>
-				</div>
-			</div>
-			
-		</section>
+            <div class="mui-content">
+                <form id='login-form' class="mui-input-group" onsubmit="return false">
+                    <div class="mui-input-row">
+                        <label>昵称</label>
+                        <input id='username' name='username' type="text" class="clearfix mui-input" placeholder="请输入昵称" tabindex="1" autocomplete=off>
+                    </div>
+                    <div class="mui-input-row">
+                        <label>密码</label>
+                        <input id='password' name='password' type="password" class="clearfix mui-input" placeholder="请输入密码" tabindex="2" autocomplete=off>
+                    </div>
+                </form>
+                <div class="mui-content-padded">
+                    <button id='login-btn' type="button" class="mui-btn mui-btn-block mui-btn-primary" tabindex="3">登录</button>
+                    <div class="link-area"><a href="javascript:location.pathname = '/user/register/';">注册</a> <span class="spliter">|</span> <a id='forgetPassword' href="javascript:rewardsON();rewardsLog('该功能未完成','');">找回</a>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
         
         {% include 'footer.html' %}
     

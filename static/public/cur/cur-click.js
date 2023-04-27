@@ -1,7 +1,8 @@
 var a_idx = 0;
 $(document).ready(function(){
-    $("a").click(function(event) {
-        event.stopPropagation();//阻止a标签被点击也触发字效果
+    $("a").on("click",function(e) {
+        e.stopPropagation();
+        //阻止a标签被点击也触发字效果
     });
     var fontColor = 0
     $("body").click(function(e) {

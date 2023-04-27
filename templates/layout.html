@@ -2,25 +2,26 @@
 {#主模版#}
 
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		<meta http-equiv="cache-control" content="no-siteapp">
-		<title>茶道部</title>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta http-equiv="cache-control" content="no-siteapp">
+        <title>茶道部</title>
         <link rel="shortcut icon" href="/static/public/img/ico.ico">
-		<link rel="stylesheet" href="/static/public/css/style.css" type="text/css" media="all">
-		<script type="text/javascript" src="/static/public/js/jquery.js"></script>
-		<script type="text/javascript" src="/static/public/js/main.js"></script>
+        <link rel="stylesheet" href="/static/public/css/style.css" type="text/css" media="all">
+        <script type="text/javascript" src="/static/public/lib/jquery.js"></script>
+        <script type="text/javascript" src="/static/public/js/main.js"></script>
+        <script type="text/javascript" src="/static/public/js/ajax_set_csrf.js"></script>
         <script type="text/javascript" src="/static/public/cur/cur-click.js"></script>
-		<!--[if lt IE 9]><script src="/public/js/html5.js"></script><![endif]-->
-	</head>
+        <!--[if lt IE 9]><script src="/static/public/lib/html5.js"></script><![endif]-->
+    </head>
 
-	<body class="archive category category-miaoxiezhen category-4 list-thumb-hover-action nav-fixed-top onecolum" style="" rlt="1">
+    <body class="archive category list-thumb-hover-action nav-fixed-top onecolum">
         
-		{% block page-main %}
+        {% block page-main %}
 
         {% endblock %}
         <div class="rewards-popover-mask">
@@ -29,6 +30,6 @@
                 <img src="/static/public/img/miku.gif">
             </div>
         </div>
-	</body>
+    </body>
 
 </html>
