@@ -8,7 +8,7 @@
 
 ## 展示
 
-没钱续服务器了
+这是上线很久的一个版本 但后面没续服务器了
 
 
 
@@ -23,7 +23,7 @@
 
 （报错的解决办法是：多出一个逗号需要去掉，用pycharm的debug功能会很明显，
 
-![报错](https://raw.githubusercontent.com/nanarino/cdb/master/static/picture/img/%E6%8A%A5%E9%94%99.jpg)
+![报错](https://raw.githubusercontent.com/nanarino/cdb/v-2019.3/static/picture/img/%E6%8A%A5%E9%94%99.jpg)
 
 也可以升级django为1.11.x+以后，具体是多少不清楚，
 
